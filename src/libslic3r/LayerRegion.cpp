@@ -897,6 +897,15 @@ void LayerRegion::prepare_fill_surfaces()
                 surface.surface_type = stInternalSolid;
     }
 
+    // turn too small internal regions into void regions according to the user setting
+    if (! spiral_vase && this->region().config().fill_density.value > 0) {
+        // scaling an area requires two calls!
+        double min_area = scale_(scale_(this->region().config().no_infill_below_area.value));
+        for (Surface &surface : m_fill_surfaces)
+            if (surface.surface_type == stInternal && surface.area() <= min_area)
+                surface.surface_type = stInternalVoid;
+    }
+
 #ifdef SLIC3R_DEBUG_SLICE_PROCESSING
     export_region_slices_to_svg_debug("2_prepare_fill_surfaces-final");
     export_region_fill_surfaces_to_svg_debug("2_prepare_fill_surfaces-final");

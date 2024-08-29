@@ -2962,6 +2962,15 @@ void PrintConfigDef::init_fff_params()
     def->mode = comExpert;
     def->set_default_value(new ConfigOptionFloat(70));
 
+    def = this->add("no_infill_below_area", coFloat);
+    def->label = L("No infill threshold area");
+    def->category = L("Infill");
+    def->tooltip = L("Force no infill for regions having a smaller area than the specified threshold.");
+    def->sidetext = L("mm²");
+    def->min = 0;
+    def->mode = comExpert;
+    def->set_default_value(new ConfigOptionFloat(1));
+
     def = this->add("solid_infill_extruder", coInt);
     def->label = L("Solid infill extruder");
     def->category = L("Extruders");

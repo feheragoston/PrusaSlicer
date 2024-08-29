@@ -744,6 +744,7 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionInt,                  perimeters))
     ((ConfigOptionFloatOrPercent,       small_perimeter_speed))
     ((ConfigOptionFloat,                solid_infill_below_area))
+    ((ConfigOptionFloat,                no_infill_below_area))
     ((ConfigOptionInt,                  solid_infill_extruder))
     ((ConfigOptionFloatOrPercent,       solid_infill_extrusion_width))
     ((ConfigOptionInt,                  solid_infill_every_layers))
