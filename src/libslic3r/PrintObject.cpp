@@ -816,6 +816,7 @@ bool PrintObject::invalidate_state_by_config_options(
             || opt_key == "top_solid_layers"
             || opt_key == "top_solid_min_thickness"
             || opt_key == "solid_infill_below_area"
+            || opt_key == "no_infill_below_area"
             || opt_key == "infill_extruder"
             || opt_key == "solid_infill_extruder"
             || opt_key == "infill_extrusion_width"

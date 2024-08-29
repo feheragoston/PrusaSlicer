@@ -295,7 +295,7 @@ void ConfigManipulation::toggle_print_fff_options(DynamicPrintConfig* config)
     const bool have_infill                      = config->option<ConfigOptionPercent>("fill_density")->value > 0;
     const bool has_automatic_infill_combination = config->option<ConfigOptionBool>("automatic_infill_combination")->value;
     // infill_extruder uses the same logic as in Print::extruders()
-    for (auto el : { "fill_pattern","solid_infill_every_layers", "solid_infill_below_area", "infill_extruder",
+    for (auto el : { "fill_pattern", "solid_infill_every_layers", "solid_infill_below_area", "no_infill_below_area", "infill_extruder",
                     "infill_anchor_max", "automatic_infill_combination" }) {
         toggle_field(el, have_infill);
     }
