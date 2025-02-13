@@ -1,9 +1,12 @@
 #include "WifiScanner.hpp"
 #include "slic3r/GUI/GUI.hpp"
 
+#include <regex>
+
 #include <boost/log/trivial.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/filesystem.hpp>
+#include <boost/nowide/convert.hpp>
 
 #ifdef _WIN32
 #include <windows.h>
